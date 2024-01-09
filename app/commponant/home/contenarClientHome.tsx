@@ -12,9 +12,7 @@ import {AxiosResponse ,AxiosError} from "axios";
 
   const  ClientHome =({InputLimit,OutputLimit,Input,Output,coc,dataStore}:{InputLimit:inputTDataype,OutputLimit:OutDataType,Input:inputTDataype,Output:OutDataType,coc:string,dataStore:dataStoreType})=> {
    
-    const {data:session} = useSession({
-        required:true,
-    })
+
     // @ts-ignore
     const token :string = session?.user?session?.user.uid:''
 
