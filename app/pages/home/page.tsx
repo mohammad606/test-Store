@@ -18,11 +18,11 @@ const Home = async () =>{
         path:`${cookie}/Input and output data/Input`,
         limit:limitToLast(4)
     }
-    const OutputLimit :OutDataType= await getData(dataSendOutput)
-    const InputLimit:inputTDataype = await getData(dataSendInput)
-    const AllOutput:OutDataType =await AxiosCube(`${cookie}/Input and output data/Output`,"GET")
-    const AllInput :inputTDataype= await AxiosCube(`${cookie}/Input and output data/Input`,"GET")
-    const dataStore :dataStoreType= await AxiosCube(`${cookie}/Store`,"GET")
+    const OutputLimit :OutDataType= await getData(dataSendOutput)?await getData(dataSendOutput):[]
+    const InputLimit:inputTDataype = await getData(dataSendInput)?await getData(dataSendInput):[]
+    const AllOutput:OutDataType =await AxiosCube(`${cookie}/Input and output data/Output`,"GET")?await AxiosCube(`${cookie}/Input and output data/Output`,"GET"):[]
+    const AllInput :inputTDataype= await AxiosCube(`${cookie}/Input and output data/Input`,"GET")?await AxiosCube(`${cookie}/Input and output data/Input`,"GET"):[]
+    const dataStore :dataStoreType= await AxiosCube(`${cookie}/Store`,"GET")?await AxiosCube(`${cookie}/Store`,"GET"):[]
 
 
     return (
