@@ -5,7 +5,7 @@ export const POST = async (req:Request) =>{
     const body = await req.json()
    if(body.id == 'delete'){
        const ser = serialize("token",'',{
-           httpOnly:true,
+        
            sameSite:'strict',
            maxAge:60*60*24,
            path:'/'
@@ -21,7 +21,7 @@ export const POST = async (req:Request) =>{
    }else {
        const token = body.id
        const ser = serialize("token",token,{
-           httpOnly:true,
+  
            sameSite:'strict',
            maxAge:60*60*24,
            path:'/'
