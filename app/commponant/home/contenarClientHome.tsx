@@ -11,12 +11,7 @@ import createCookie from "@/app/hooks/setCoc";
 import {AxiosResponse ,AxiosError} from "axios";
 
   const  ClientHome =({InputLimit,OutputLimit,Input,Output,coc,dataStore}:{InputLimit:inputTDataype,OutputLimit:OutDataType,Input:inputTDataype,Output:OutDataType,coc:string,dataStore:dataStoreType})=> {
-    const {data:session} = useSession({
-        required:true,
-        onUnauthenticated(){
-            redirect('/pages/signIn')
-        }
-    })
+    const {data:session} = useSession({})
     // @ts-ignore
     const token :string = session?.user?session?.user.uid:''
 
@@ -37,7 +32,7 @@ import {AxiosResponse ,AxiosError} from "axios";
 }
 
 export default ClientHome
-ClientHome.requireAuth = true
+
 
 
 
